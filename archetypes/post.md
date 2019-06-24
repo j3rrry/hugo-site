@@ -1,9 +1,9 @@
 +++
 title = "{{ replace .TranslationBaseName "-" " " | title }}"
-subtitle = ""
+subtitle = "{{ replace .TranslationBaseName "-" " " | title }}"
 
 # Add a summary to display on homepage (optional).
-summary = ""
+summary = "{{ replace .TranslationBaseName "-" " " | title }}"
 
 date = "{{ .Date }}"
 publishDate = "{{ .Date }}"

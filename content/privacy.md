@@ -10,4 +10,4 @@ header:
   image: ""
 ---
 
-...
+본 사이트 내의 게시물의 소유권은 제작자인 github.com/j3rrry 에게 있음.

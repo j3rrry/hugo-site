@@ -28,7 +28,7 @@ interests:
 
 education:
   courses:
-  - course: BE in Computer Information and Communications
+  - course: BSc in Computer Information and Communications
     institution: Hongik University
     year: 2019
 
