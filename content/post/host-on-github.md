@@ -26,7 +26,7 @@ Repo 이름을 `ProjName` 으로 했다면 `username.github.io/ProjName`으로 P
 
 # gh-pages로 Publish하기
 따로 branch를 만들어야한다.
-```
+```bash
 git branch -b gh-pages
 ```
 master branch는 더 이상 필요가 없다.

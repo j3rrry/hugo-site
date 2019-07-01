@@ -46,7 +46,7 @@ Google CTF 2019 Quals
 1.1. [Doomed to Repeat It](#doomed-to-repeat-it) `#golang`, `#brute force`  
 
 ## Doomed to Repeat It
-**본 Writeup은 [Reptilian Shapeshifters' Writeup](https://ctftime.org/writeup/15811)을 재구성한 것입니다.**
+**본 Writeup은 [Reptilian Shapeshifters' Writeup](https://ctftime.org/writeup/15811)과 [Sl33perSh3ll's Writeup](https://ctftime.org/writeup/15815)을 재구성한 것입니다.**
 
 solves: 65
 
@@ -217,7 +217,7 @@ uri = "wss://doomed.web.ctfcompetition.com/ws"
 asyncio.get_event_loop().run_until_complete(solve(uri))
 {{< / highlight >}}
 
-{{< highlight go "linenos=table" >}}
+{{< highlight go "linenos=table,linenostart=33" >}}
 // We vigorously defend against CSRF/XSRF with strict origin checks.
 // Note that without this, we would have severe vulnerabilities, because
 // browsers don't enforce the same origin policy on websockets.
@@ -252,3 +252,41 @@ func checkOrigin(r *http.Request) bool {
 
 main.go 소스 코드를 확인해보면 CSRF나 XSRF를 방지하고자 <kbd>Origin</kbd>을 확인하고 있다고 한다.
 그래서 websocket 보낼 때 Origin을 포함하지 않으면 403 Forbidden 이 뜬다.
+
+{{< highlight go "linenos=table,linenostart=22" >}}
+// OsRand gets some randomness from the OS.
+func OsRand() (uint64, error) {
+    // 64 ought to be enough for anybody
+    var res uint64
+    if err := binary.Read(rand.Reader, binary.LittleEndian, &res); err != nil {
+        return 0, fmt.Errorf("couldn't read random uint64: %v", err)
+    }
+    // Mix in some of our own pre-generated randomness in case the OS runs low.
+    // See Mining Your Ps and Qs for details.
+    res *= 14496946463017271296
+    return res, nil
+}
+{{< / highlight >}}
+
+위 코드는 random/random.go 소스 코드이며 난수 발생기를 확인할 수 있습니다.
+
+{{< highlight python >}}
+>>> hex(14496946463017271296)
+'0xc92f800000000000L'
+>>> 
+>>> res = 8979835648265197673
+>>> res *= 140737488355328
+>>> res = ctypes.c_uint64(res).value
+>>> bin(140737488355328)
+'0b100000000000000000000000000000000000000000000000'
+>>> 140737488355328 == 2 ** 47
+True
+>>> bin(res)
+'0b100110000110100100000000000000000000000000000000000000000000000'
+>>> 2 ** (64-47)
+131072
+{{< / highlight >}}
+
+res에 해당 숫자를 곱하면 2의 47승 아래가 전부 0으로 초기화 된다.
+OsRand()는 uint64 자료형을 쓰지만 발생하는 난수의 경우의 수는 131,072(2**17)가지 밖에 안된다.
+따라서, 13만 가지의 카드 배열을 레인보우 테이블처럼 만들어 놓고 풀면 된다.

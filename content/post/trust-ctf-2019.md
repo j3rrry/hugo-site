@@ -32,7 +32,7 @@ tags: ["CTF", "TRUST", "2019"]
   
 조혜련의 태보 다이어트 유튜브 영상에서는 `jab`, `hook` 등의 구호에 맞춰서 약 25분동안 운동을 하는 모습이 나온다.
 nc로 서버에 접속해보면 다음과 같은 문구가 나온다  
-```
+```bash
 +------------------------------------------------------------------------+
 | Example)                                                               |
 |                                                                        |
@@ -124,7 +124,7 @@ print 'TRUST{%s}' % str4
 > (Code the rule in one line.) (rule은 한줄로 짜시오.)  
 > Author : dukup11ch1(유기환)
 
-```
+```bash
 $ md5sum *
 c05ce65e737b09f71ff5ae3edebcdbea  1.exe
 cfaa3f5b852ee5cce113b3ccddeb74d0  10.exe

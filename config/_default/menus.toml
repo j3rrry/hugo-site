@@ -14,19 +14,24 @@
   weight = 20
 
 [[main]]
+  name = "Tags"
+  url = "#tags"
+  weight = 30
+
+[[main]]
   name = "Malware"
   url = "malware/"
-  weight = 30
+  weight = 40
 
 [[main]]
   name = "CQ-RankCalc"
   url = "/CQ/?#"
-  weight = 40
+  weight = 50
 
 [[main]]
   name = "Contact"
   url = "#contact"
-  weight = 50
+  weight = 60
 
 #[[main]]
 #  name = "Courses"

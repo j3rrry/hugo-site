@@ -40,6 +40,6 @@ draft = false
 +++
 
 submodule을 포함한 Repo를 clone할 때 명령어 옵션 `--recurse-submodules`
-```
+```git
 git clone --recurse-submodules https://github.com/j3rrry/hugo-site.git
 ```

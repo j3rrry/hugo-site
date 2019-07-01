@@ -52,7 +52,7 @@ MD5: e3eda0a4cacd2927973bca03df2197c9
   
 <br>  
 
-```
+```bash
 $ file easy_rev flag
 easy_rev: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=d6ab8e0c86636e8331cc465ae54a5013598dd79e, not stripped
 flag:     openssl enc'd data with salted password
@@ -61,7 +61,7 @@ flag:     openssl enc'd data with salted password
   
 <br>  
   
-```
+```c
 void __cdecl main(int argc, const char **argv, const char **envp)
 {
   signed int i; // [sp+8h] [bp-48h]@1
@@ -93,7 +93,7 @@ void __cdecl main(int argc, const char **argv, const char **envp)
   
 <br>  
   
-```
+```c
 int __fastcall swap(int *a1)
 {
   int result = 0; // [sp+18h] [bp-48h]@1
@@ -131,11 +131,11 @@ swap 함수는 정수형 배열 `v9`를 만들고 두 가지 연산을 한다.
   
 <br>
   
-```
+```markup
 64 -12 42 632 -123 53 2445 -123 63 1
 ```
 위의 10개의 숫자를 넣으면 
-```
+```shell
 $ ./easy_rev
 ==========================================
        NEWBIE REV1 right here !!
@@ -153,7 +153,7 @@ Let's See the result!!!!
   
 <br>
 
-```
+```python
 >>> sum([64, -12, 42, 632, -123, 53, 2445, -123, 63, 1])
 3042
 ```
@@ -161,7 +161,7 @@ key = 3042
 
 <br>
 
-```
+```bash
 $ openssl enc -d -aes-256-cbc -in flag -k 3042
 flag{R2versing_1s_b4sed_0n_H4cking_:)}
 ```

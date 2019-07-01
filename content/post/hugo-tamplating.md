@@ -16,7 +16,7 @@ displayInList: true
 `-`는 whitespace를 제거해준다.
 
 without `-`
-```
+```markup
       <header class="list-header">
         {{ with .Site.Params.headerSubtext }}
         <p class="list-header-subtext">{{ . }}</p>
@@ -25,7 +25,7 @@ without `-`
 ```
 
 with `-`
-```
+```markup
       <header class="list-header">
         {{- with .Site.Params.headerSubtext }}
         <p class="list-header-subtext">{{ . }}</p>
@@ -34,7 +34,7 @@ with `-`
 ```
 
 RESULT without:
-```
+```markup 
       <header class="list-header">
 
         <p class="list-header-subtext">K-Shield Jr. CM 2기</p>
@@ -43,7 +43,7 @@ RESULT without:
 ```
 
 RESULT with:
-```
+```markup
       <header class="list-header">
         <p class="list-header-subtext">K-Shield Jr. CM 2기</p>
         <h1 class="list-header-title">posts</h1>

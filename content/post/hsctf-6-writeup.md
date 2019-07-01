@@ -377,7 +377,7 @@ e = ELF('./combo-chain-lite')
 binsh = next(e.search('/bin/sh'))
 ```
 `/bin/sh`를 매개변수로 전달하려고보니.. 이번 문제는 ELF64 바이너리였다.
-```
+```markup
 [*] '/mnt/hgfs/shared/hsctf/combo-chain-lite'
     Arch:     amd64-64-little
     RELRO:    Partial RELRO
@@ -1052,7 +1052,7 @@ flag : `hsctf{who_uses_extensions_anyways}`
 이번에는 cool.png 를 준다.
 strings 로 푸는것도 아닌거같고 footer도 정상이다.
 그렇다면 header를 확인해보니
-```
+```markup
 I found this cool file. Its really cool!
 <89>PNG^M
 ^Z

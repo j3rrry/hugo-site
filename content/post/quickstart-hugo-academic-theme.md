@@ -41,7 +41,7 @@ draft = false
 
 본 포스팅에서는 hugo-academic 테마를 이용하여 Github Page에 Publishing 하는 방법을 간단하게 다룹니다.
 
-```
+```bash
 $ hugo new site my-site
 $ cd my-site
 $ git init
@@ -75,13 +75,13 @@ Github Page에서는 세 가지 방법으로 Publishing 할 수 있습니다.[^g
 * `j3rrry.github.io`를 이름으로 갖는 레포지토리 만들어 놓기
 
 먼저 빌드를 합니다.
-```
+```bash
 $ hugo
 $ ls public/
 ```
 `public/` 디렉토리 안에 빌드된 사이트가 만들어진다. 빌드된 것을 Publishing 하는 것이다.
 
-```
+```bash
 $ cd public/
 $ git init
 $ git remote add origin https://github.com/j3rrry/j3rrry.github.io.git

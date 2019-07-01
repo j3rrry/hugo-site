@@ -18,7 +18,7 @@ organizations:
   url: "http://kshieldjrcm.kr"
 
 # Short bio (displayed in user profile at end of posts)
-bio: 4년제 졸업했으며 현재 취업연계 교육을 받고 있으며 CTF 참가하는 것을 좋아합니다. 취업시켜주세요!
+bio: 4년제 졸업했으며 취업연계 교육을 받았으며 CTF 참가하는 것을 좋아합니다.
 
 interests:
 - CTF
