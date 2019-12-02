@@ -10,7 +10,7 @@ authors:
 superuser: true
 
 # Role/position
-role: K-Shield Jr. 분석대응 2기
+role: 정보보호 컨설턴트
 
 # Organizations/Affiliations
 organizations:
@@ -21,9 +21,9 @@ organizations:
 bio: 4년제 졸업했으며 취업연계 교육을 받았으며 CTF 참가하는 것을 좋아합니다.
 
 interests:
-- CTF
 - Blogging
 - Chess
+- CTF
 - Malware Analysis
 
 education:
@@ -65,4 +65,5 @@ user_groups:
 - Visitors
 ---
 
-홍익대 컴퓨터정보통신공학과를 졸업하고 취업연계과정인 K-Shield Jr. 2기를 수료 중입니다.(2019.03 ~ 2019.06)
+홍익대 컴퓨터정보통신공학과를 졸업하고 취업연계과정인 K-Shield Jr. 2기를 수료했으며  
+정보보호 컨설턴트로 활동 중입니다.
