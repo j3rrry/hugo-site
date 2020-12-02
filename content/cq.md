@@ -39,6 +39,13 @@ keywords = ["CQ"]
 draft = false
 +++
 
+# 바람의나라 연 / 거래소 최저가 계산기
+<input type="number" id="baram_price_avg" style="width:5em" placeholder="16.1208">
+  <input type="button" value="Calc" id="baram_button">
+<p id="baram_price_min_1"></p>
+<p id="baram_price_min_i"></p>
+
+# CQ-RankCalc
 <form action="">
   <input type="number" id="x" style="width:4em" min="0" placeholder="1605">
   /
@@ -60,6 +67,26 @@ draft = false
 <p id="exp"></p>
 
 <script>
+document.getElementById('baram_button').onclick = function(){
+  //var price_avg = document.getElementById('baram_price_avg')      .value;
+  var price_avg = 16.1208;
+  var price_min = price_avg * 0.8;
+  var a0 = price_min % 1;
+  var i, a1, a2, a3, a4;
+  document.getElementById('baram_price_min_1').innerHTML = '1개, ' + price_min;
+	for (i = 2; i < 1000; i++) {
+		a1 = price_min * i;
+        a2 = a1 % 1;
+        if (a2 >= a0) {
+            a3 = Math.ceil(a1) / i;
+            a4 += i + '개, 총: ' + a1 + ', 평균: ' + a3 + '<br>';
+            a0 = a2;
+        }
+	}
+    document.getElementById('baram_price_min_i').innerHTML = a4;
+}
+
+
 function k_combinations(set, k) {
 	var i, j, combs, head, tailcombs;
 	
