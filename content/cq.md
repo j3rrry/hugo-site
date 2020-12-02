@@ -68,8 +68,7 @@ draft = false
 
 <script>
 document.getElementById('baram_button').onclick = function(){
-  //var price_avg = document.getElementById('baram_price_avg')      .value;
-  var price_avg = 16.1208;
+  var price_avg = document.getElementById('baram_price_avg')      .value;
   var price_min = price_avg * 0.8;
   var a0 = price_min % 1;
   var i, a1, a2, a3, a4;
