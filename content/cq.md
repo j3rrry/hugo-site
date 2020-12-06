@@ -14,9 +14,9 @@ authors = []
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = ["CQ"]
-categories = ["CQ"]
-keywords = ["CQ"]
+tags = ["CQ", "바람의나라: 연"]
+categories = ["CQ", "바람의나라: 연"]
+keywords = ["CQ", "바람의나라: 연", "calc", "계산기"]
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
@@ -39,9 +39,9 @@ keywords = ["CQ"]
 draft = false
 +++
 
-# 바람의나라 연 / 거래소 최저가 계산기
-<input type="number" id="baram_price_avg" style="width:5em" placeholder="16.1208">
-  <input type="button" value="Calc" id="baram_button">
+# 바람의나라: 연 / 거래소 최저가 계산기
+평균 거래 단가: <input type="number" id="baram_price_avg" style="width:5em" onkeyup="baram_func();" placeholder="16.1208">
+  <!--input type="button" value="Calc" id="baram_button" onclick="baram_func();"-->
 <p id="baram_price_min_1"></p>
 <p id="baram_price_min_i"></p>
 
@@ -67,16 +67,20 @@ draft = false
 <p id="exp"></p>
 
 <script>
-document.getElementById('baram_button').onclick = function(){
+//document.getElementById('baram_button').onclick = function(){
+var baram_func = function(){
   var price_avg = document.getElementById('baram_price_avg')      .value;
+  if (price_avg == 0){
+    price_avg = 16.1208;
+  }
   var price_min = price_avg * 0.8;
   var a0 = price_min % 1;
-  var i, a1, a2, a3, a4;
+  var i, a1, a2, a3, a4='';
   document.getElementById('baram_price_min_1').innerHTML = '1개, ' + price_min;
 	for (i = 2; i < 1000; i++) {
 		a1 = price_min * i;
         a2 = a1 % 1;
-        if (a2 >= a0) {
+        if (a2 > a0) {
             a3 = Math.ceil(a1) / i;
             a4 += i + '개, 총: ' + a1 + ', 평균: ' + a3 + '<br>';
             a0 = a2;

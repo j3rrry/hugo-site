@@ -43,7 +43,10 @@ draft = false
 1. [Prefix key](#prefix-key-index)  
 1. [Sessions, Windows, Panes](#sessions-windows-panes-index)
 1. [Reorder tmux windows?](#reorder-tmux-windows-index) `C-b + .`  
+1. [Copy mode](#copy-mode-index)
 1. [My config file](#my-config-file-index)  
+&nbsp;  
+&nbsp;  
 
 # [Prefix key](#index)
 프리픽스 키란, tmux 단축키를 사용하기위해 먼저 선행되어야하는 키이다.  
@@ -57,12 +60,16 @@ set -g prefix C-a
 unbind C-b
 bind-key C-a send-prefix
 ```
+&nbsp;  
+&nbsp;  
 
 # [Sessions, Windows, Panes](#index)
 쉘에 `tmux` 명령어를 치면 생성되는 것이 바로 세션이다.  
 세션이 생성될 때 1개의 윈도우도 같이 생성된다.  
 세션 안에서 여러개의 윈도우를 생성할 수 있으며  
 각각의 윈도우마다 경계선으로 구분되는 여러개의 팬(pane)을 만들 수 있다.
+&nbsp;  
+&nbsp;  
 
 # [Reorder tmux windows?](#index)
 보통 session 안에서 창을 여러개 띄워 놓고 하게 되는데, `창`의 순서를 바꾸고 싶을 때  
@@ -73,6 +80,16 @@ C-b + .
 ```
 
 https://superuser.com/questions/343572/how-do-i-reorder-tmux-windows#comment-920091
+&nbsp;  
+&nbsp;  
+
+# [Copy mode](#index)
+`C-b` + `[` : copy 모드 진입  
+`<Space Bar>` : copy 시작  
+`<Enter>` : copy 끝  
+`C-b` + `]` : paste 붙여넣기
+&nbsp;  
+&nbsp;  
 
 # [My config file](#index)  
 ```py

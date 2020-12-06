@@ -1,12 +1,12 @@
 +++
-title = "git commands"
-subtitle = "주로 hugo 사용하면서 썼던 것들"
+title = "iOS hooking"
+subtitle = "using Frida"
 
 # Add a summary to display on homepage (optional).
-summary = "주로 hugo 사용하면서 썼던 것들"
+summary = "using Frida"
 
-date = "2019-03-12T02:22:38+09:00"
-publishDate = "2019-03-12T02:22:38+09:00"
+date = "2020-12-03T04:12:48+09:00"
+publishDate = "2020-12-03T04:12:48+09:00"
 expiryDate = ""
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
@@ -14,9 +14,9 @@ authors = []
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = ["git"]
-categories = ["Git"]
-keywords = ["git"]
+tags = ["frida"]
+categories = ["frida"]
+keywords = ["frida"]
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
@@ -39,21 +39,18 @@ keywords = ["git"]
 draft = false
 +++
 
-```git
-git status
-git add .
-git commit -m 'commit log 1'
-git push origin master
-hugo
-cd ./public/
-git status
-git add .
-git commit -m 'commit log 1'
-git push origin master
-```
-&nbsp;  
-&nbsp;  
-submodule을 포함한 Repo를 clone할 때 명령어 옵션 `--recurse-submodules`
-```git
-git clone --recurse-submodules https://github.com/j3rrry/hugo-site.git
+IDA로 후킹할 사용자 함수의 상대 offset을 알아낸다.  
+frida로 앱 base주소를 얻고 offset을 더해준 주소에 후킹을 걸면 된다.  
+```js
+var module_base = Module.findBaseAddress('testapp');    // get base addr
+var custom3_5fdfd4 = module_base.add(0x5fdfd4);         // add function offset
+
+Interceptor.attach(custom3_5fdfd4, {
+    onEnter: function (args) {
+        send("[*] custom3()  called");                  // before call
+    },
+    onLeave: function (retval) {
+        //send("[] custom3 ret: " + retval.toString()); // after call
+    }
+});
 ```
