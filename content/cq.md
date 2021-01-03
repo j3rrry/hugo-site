@@ -81,8 +81,8 @@ var baram_func = function(){
 		a1 = price_min * i;
         a2 = Math.ceil(a1) / i;
         a3 = Math.round(a2 * 10000) / 10000;
-        if (a3 < a0) {
-            a4 += i + '개, 총: ' + a1 + ', 평균: ' + a2 + '<br>';
+        if (a3 <= a0) {
+            a4 += i + '개, 총: ' + a1 + ', 평균: ' + a3 + '<br>';
             a0 = a3;
         }
 	}
