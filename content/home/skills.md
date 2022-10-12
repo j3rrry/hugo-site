@@ -24,12 +24,12 @@ subtitle = ""
   icon = "python"
   icon_pack = "fab"
   name = "Python"
-  description = "80%"  
+  description = "90%"   
   
 [[feature]]
   icon = "chess"
   icon_pack = "fas"
   name = "Chess.com"
-  description = "1500"
+  description = "1200"
 
 +++
